@@ -1,42 +1,32 @@
-import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.util.Scanner;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 
-@SuppressWarnings("unused")
+
 public class problema2 {
 
     public static void main(String[] args) throws IOException {
 
-        Scanner scanner = new Scanner(System.in);
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int numPalabras = Integer.parseInt(br.readLine());
+        String entrada = br.readLine();
+        String[] numeros = entrada.split("\\+");
+       
+        ArrayList<Integer> numer = new ArrayList<Integer>();
 
-        String[] palabras = new String[numPalabras];
-
-        for (int i = 0; i < numPalabras; i++) {
-
-            palabras[i] = br.readLine();
-
+        for (int i = 0; i < numeros.length; i++) {
+            numer.add(Integer.parseInt(numeros[i]));
         }
+    
+        //Collections.sort(numer);
+        numer.sort(null);
 
-        for (int i = 0; i < numPalabras; i++) {
-
-            if (palabras[i].length() <= 10) {
-                System.out.println(palabras[i]);
-            } else {
-                int tamPalabra = palabras[i].length() - 2;
-                System.out.print(palabras[i].charAt(0));
-                System.out.print(tamPalabra);
-                System.out.print(palabras[i].charAt(tamPalabra + 1));
-                System.out.println();
-            }
-
+        for (int j = 0; j < numer.size(); j++) {
+            if(j == numer.size() - 1) System.out.print(numer.get(j));
+            else System.out.print(numer.get(j) + "+"); 
         }
-
-        scanner.close();
-
+        
+        System.out.println("");
     }
 
 }

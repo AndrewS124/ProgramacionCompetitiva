@@ -1,18 +1,22 @@
-import java.util.Objects;
 import java.util.Scanner;
 
-@SuppressWarnings("unused")
+
 public class problema1 {
     public static void main(String[] args) {
+        
+        String a,b;
+        Scanner sc = new Scanner (System.in);
+        a = sc.nextLine();
+        b = sc.nextLine();
+        
+        int resultado = a.compareToIgnoreCase(b);
 
-        Scanner scanner = new Scanner(System.in);
-        int pesoFruta = scanner.nextInt();
-        scanner.close();
+        if(resultado < 0) System.out.println("-1");
+        else if (resultado > 0 ) System.out.println("1");
+        else if (resultado == 0 ) System.out.println("0");
 
-        if (pesoFruta <= 2 || pesoFruta % 2 != 0) {
-            System.out.println("NO");
-        } else {
-            System.out.println("YES");
-        }
+        sc.close();
+        
     }
+    
 }
