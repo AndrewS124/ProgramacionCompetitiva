@@ -1,36 +1,27 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 
 public class problema4 {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        int numDeclaraciones =  Integer.parseInt(br.readLine());
+        String pesos = br.readLine();
 
-        int salida = 0;
+        int pesoL = Integer.parseInt(pesos.split(" ")[0]);
+        int pesoB = Integer.parseInt(pesos.split(" ")[1]);
 
-        ArrayList<String> declaraciones = new ArrayList<>();
+        int anios = 0;
 
-        for(int i = 0; i < numDeclaraciones; i++){
-            declaraciones.add(br.readLine());
+        while (pesoL<=pesoB) {
+            pesoL = pesoL * 3;
+            pesoB = pesoB * 2;
+            anios++;
         }
 
-        //System.out.println(declaraciones);
-
-        br.close();
-
-        for (String declaracion : declaraciones) {
-            if (declaracion.contains("+")) {
-                salida++;
-            } else if (declaracion.contains("-")) {
-                salida--;
-            }
-        }
-
-        System.out.println(salida);
+        System.out.println(anios);
+        
 
     }
 }

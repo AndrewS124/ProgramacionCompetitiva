@@ -1,21 +1,24 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 
 
 public class problema1 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         
-        String a,b;
-        Scanner sc = new Scanner (System.in);
-        a = sc.nextLine();
-        b = sc.nextLine();
-        
-        int resultado = a.compareToIgnoreCase(b);
+       BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-        if(resultado < 0) System.out.println("-1");
-        else if (resultado > 0 ) System.out.println("1");
-        else if (resultado == 0 ) System.out.println("0");
+       String palabra =  reader.readLine();
 
-        sc.close();
+       String resto = palabra.substring(1, palabra.length());
+       char a = palabra.toUpperCase().charAt(0);
+
+       System.out.println(a + resto);
+       
+       
+
+    
         
     }
     

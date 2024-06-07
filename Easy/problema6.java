@@ -7,17 +7,21 @@ public class problema6 {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        // cont fichas
-        String entrada = br.readLine();
+        int coords = Integer.parseInt(br.readLine());
+        double pasos = Integer.MAX_VALUE;
 
-        String[] tamMatriz = entrada.split(" ");
+        for(double i = 1; i<=5; i++){
 
-        int filas = Integer.parseInt(tamMatriz[0]);
-        int columnas = Integer.parseInt(tamMatriz[1]);
+                double cont = coords/i;
+                if(cont<pasos){
+                    pasos = cont;
+                }
+            
+        }
 
-        int fichasIngresada = (filas * columnas) / 2;
-
-        System.out.println(fichasIngresada);
+        //System.out.println(String.format("%.0f", Math.ceil(pasos)));
+        System.out.println(((int)Math.ceil(pasos)));
+        
 
     }
 }
